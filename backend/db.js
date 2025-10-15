@@ -1,8 +1,16 @@
 const mongoose =require ("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/paytm");
+mongoose.connect("mongodb+srv://rajeshgupta67867_db_user:KSZfui2q3SVhFRQE@cluster0.q2ttitw.mongodb.net/")
+.then(()=>{
+    console.log("mongodb connected successfully"  )
+})
 
-const  userSchema=mongoose.schema({
+.catch(()=>{
+    console.error("mongodb connection error:",err)
+})
+
+
+const  userSchema= new mongoose.Schema({
     username: String,
     password:String,
     firstname:String,
